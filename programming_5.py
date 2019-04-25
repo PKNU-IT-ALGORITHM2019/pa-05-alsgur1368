@@ -132,8 +132,8 @@ while True:
             word = fp.readline().split("\n")[0]
             if not word:
                 break
-            bst.delete(word)
-            del_count += 1
+            if bst.delete(word):
+                del_count += 1
         fp.close()
         print("%d words were deleted successfully." % del_count)
 
